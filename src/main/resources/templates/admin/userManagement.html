@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link th:replace="~{fragments/dashboardHeader::bootstrap-css}" />
+    <link rel="stylesheet" th:href="@{/stylesheet/users.css}" />
+    <script>
+        // Filter Users
+        function filterUsers() {
+        const input = document.getElementById('searchInput');
+        const filter = input.value.toLowerCase();
+        const rows = document.querySelectorAll('#userTable tbody tr');
+
+        rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        const name = cells[1]?.innerText.toLowerCase() || '';
+        const email = cells[2]?.innerText.toLowerCase() || '';
+
+        row.style.display = (name.includes(filter) || email.includes(filter)) ? '' : 'none';
+    });
+    }
+    </script>
+</head>
+<body>
+<aside th:replace="~{fragments/dashboardHeader::sidebar}"></aside>
+
+    <main class="dashboard-content container">
+    <h1>User Management</h1>
+
+    <!-- Search Filter -->
+    <div class="search-container"> Search:  
+        <input type="text" id="searchInput" placeholder="Search by name or email..."
+               onkeyup="filterUsers()">
+    </div>
+
+    <!-- User Table -->
+    <table id="userTable" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Registration Date</th>
+                <th>Status</th>
+                <th>Activate/ Desactivate</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.id}"></td>
+                <td th:text="${user.name + ' ' + user.surname}"></td>
+                <td th:text="${user.email}"></td>
+                <td th:text="${user.registration_date}"></td>
+                <td th:text="${user.is_active ? 'Active' : 'Inactive'}"></td>
+                <td>
+                    <form th:action="@{/dashboard/users/toggle-status}" method="post"
+                          style="display: inline;">
+                        <input type="hidden" name="id" th:value="${user.id}">
+                        <button type="submit"
+                                class="btn btn-sm"
+                                th:classappend="${user.is_active ? 'btn-danger' : 'btn-success'}"
+                                th:text="${user.is_active ? 'Deactivate' : 'Activate'}">
+                        </button>
+                    </form>
+                </td>
+                <td>
+                    <!-- Delete Button -->
+                    <form th:action="@{/dashboard/users/delete}" method="post"
+                          style="display: inline;">
+                        <input type="hidden" name="id" th:value="${user.id}">
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </main>
+
+
+</body>
+</html>

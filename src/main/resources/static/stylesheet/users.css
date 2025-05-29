@@ -1,0 +1,115 @@
+body {
+    font-family: "Times New Roman";
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    font-family: fantasy;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px; /* Fixed width of the sidebar */
+    background-color: #f0f8ff;
+    border-right: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/* Sidebar Links */
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-link i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.sidebar-link:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Main Content */
+.dashboard-content {
+    margin-left: 220px; /* Space for the sidebar plus a gap */
+    padding: 20px;
+    background-color: #f8f9fa;
+    flex-grow: 1;
+    min-height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box; /* Ensures padding doesn't add to the width */
+}
+
+.container {
+    padding: 20px;
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.search-container {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+#searchInput {
+    padding: 8px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table th {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+
+
+

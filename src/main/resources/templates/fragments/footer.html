@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Include Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* Reset body margin and padding */
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Footer Styling */
+        footer {
+            /*background-color: #d3003f;*/
+            background-color: #ce033f;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-family: "Times New Roman", serif;
+            width: 100%;
+            font-size: 0.9rem;
+            background: linear-gradient(to bottom, #ce033f, #a0022e);
+        }
+
+        footer a {
+            color: #FBEBD8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .footer-section {
+            margin-bottom: 20px;
+        }
+
+        /* Social Media Icon */
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Quick Links and Contact Info */
+        .footer-contact {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-contact li {
+            margin-bottom: 5px;
+        }
+
+        .footer-contact li:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer-contact li i {
+            margin-right: 10px;
+            color: black;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* Footer Columns */
+        .footer-container {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        /* Center Content on Small Screens */
+        @media (max-width: 768px) {
+            footer {
+                text-align: center;
+            }
+
+            .footer-column {
+                flex: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer th:fragment="footer">
+        <div class="footer-container">
+            <div class="footer-column footer-section">
+                <h5>Contact Us</h5>
+                <ul class="footer-contact">
+                    <li><i class="bi bi-envelope"></i>Email: <a href="mailto:info@polishcommunity.org">info@polishcommunity.org</a></li>
+                    <li><i class="bi bi-phone"></i>Phone: +44 1234 567 890</li>
+                    <li><i class="bi bi-geo-alt"></i>Address: Community House, Eton Rd, Newport, NP190BL, Cardiff, UK</li>
+                </ul>
+                <div class="social-icons">
+                    <p>Follow us on Facebook:</p>
+                    <a href="https://www.facebook.com/ludek.pcg.3/" target="_blank" aria-label="Facebook">
+                        <img src="images/fblogo.png" alt="Facebook">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="text-center">&copy; 2024 Polish Community Organization. All rights reserved.</p>
+    </footer>
+
+    <script th:fragment="bootstrap-js"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous">
+    </script>
+</body>
+</html>

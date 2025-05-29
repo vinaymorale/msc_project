@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheet/healthPage.css"/>
+    <link th:replace="~{fragments/header :: bootstrap-css}" />
+    <title>Health Section</title>
+    <script>
+        function filterMaps() {
+            const selectedMap = document.getElementById('mapFilter').value;
+            const maps = document.querySelectorAll('.map');
+
+            maps.forEach(map => map.style.display = 'none');
+
+            const mapToShow = document.getElementById(`${selectedMap}Map`);
+            if (mapToShow) {
+                mapToShow.style.display = 'block';
+            }
+        }
+
+        window.onload = function () {
+            filterMaps();
+        }
+
+        function showThankYouMessage() {
+            alert("Thank you for submitting the health survey!");
+            return true; // Allow form submission to proceed
+        }
+    </script>
+</head>
+<body>
+<header th:replace="~{fragments/header}"></header>
+    <section class="top_sec">
+        <h1 class="title">Health And Social Care Information</h1>
+            <div class="intro_para">
+                <p>This page is dedicated to providing you with the vital role of health and social care
+                services in supporting the well-being and integration of migrants in wales and the UK.
+                Having this easy access to healthcare can help to feel supported and integrated in new communities.
+                This page covers the crucial and diverse healthcare needs and support mechanisms, including
+                the importance of tailored services and any challenges one may be facing when dealing with the
+                healthcare system. The importance of mental health and the need for compassionate care is also vital,
+                 so we hope to provide useful information to make healthcare easy, more accessible and welcoming for all. </p>
+            </div>
+                    <a href="https://www.gov.wales/migrant-integration-framework-html#135678" target="_blank">
+                        <button class="web_link">Click here for more info from the GOV website</button>
+                    </a>
+
+        <div class="map_filter">
+            <label for="mapFilter">Medical services in South Wales map</label>
+            <select id="mapFilter" onchange="filterMaps()">
+                <option value="hospitals">Hospitals in South wales</option>
+                <option value="clinics">Clinics in South Wales</option>
+                <option value="emergencies">Emergency centres in South Wales</option>
+            </select>
+        </div>
+    </section>
+
+    <div class="map_container">
+        <iframe id="hospitalsMap" class="hospital_map map" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d415317.57121805643!2d-3.7634396405014114!3d51.63963424384351!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shospitals%20in%20south%20wales!5e0!3m2!1sen!2suk!4v1733015749740!5m2!1sen!2suk"
+    width="700" height="300" style="border:0px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe id="clinicsMap" class="clinics_map map" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d633095.0505701001!2d-3.9206347310942817!3d51.69594109969169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sSouth%20Wales%20health%20clinics!5e0!3m2!1sen!2suk!4v1733274002471!5m2!1sen!2suk"
+                width="700" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe id="emergenciesMap" class="emergency_map map" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d634007.8260032125!2d-3.76347774565222!3d51.630663012241875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1semergency%20centres%20south%20wales!5e0!3m2!1sen!2suk!4v1733017428254!5m2!1sen!2suk"
+                width="700" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+<br>
+<div class="mentalHealth-section">
+    <h1 class="mental-title">Mental Health services in South Wales</h1>
+    <div class="mentalHealth-intro">
+        <p>Taking care of your mental health is just as important as your physical. This section provides
+            the support and resources, whether you’re seeking professional help, community support,
+            or simple ways to improve your well-being, we’re here to guide you. Together, we can make sure
+            you feel supported and empowered to build a happy and healthy life here. </p>
+    </div>
+    <section class="mentalHealth-linkArea">
+        <p class="mentalHealth-buttonText">The link provided will direct you to the Trauma Framework Cymru which
+            fosters trauma-informed support across Wales. The info they provide can enhance awareness, promote
+            sensitive support, and connect people with trauma-informed resources, empowering individuals to overcome
+            obstacles, mental challenges and build resilience in their new environment.</p>
+        <a href="https://traumaframeworkcymru.com/" target="_blank">
+            <button class="mentalHealth-link">Click here to be directed to Trauma Framework Cymru</button>
+        </a>
+    </section>
+    <div class="mentalHealth-map">
+        <p>Mental Health support centres in South wales:</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d632984.9038108625!2d-4.014199298238773!3d51.703814386728766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smental%20health%20south%20wales!5e0!3m2!1sen!2suk!4v1733180396315!5m2!1sen!2suk"
+                width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    </div>
+
+</div>
+
+<div class="crisis-section">
+    <h5 class="crisis-title">Immediate crisis support</h5>
+    <p class="crisis-para">If you or someone you know is in a severe crisis, immediate danger or needs urgent
+        help, don't hesitate to seek support straight away. Here are some services to contact when necessary.</p>
+    <ul class="crisis-list">
+        <li><strong><a href="https://111.nhs.uk" target="_blank">111</a></strong>: For urgent health support of all types and advice.</li>
+        <li><strong><a href="https://www.samaritans.org/wales/" target="_blank">Samaritans</a></strong>: Call 116-123 for 24/7 support if you need someone to talk to.</li>
+        <li><strong>999</strong>: For emergencies where there is an immediate risk to life.</li>
+    </ul>
+</div>
+    <h2 class="survey-title">Your Health Queries</h2>
+<form class="healthQueryForm" action="/health-survey" method="post" onsubmit="return showThankYouMessage();">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="email">Email address:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="location">What area of South Wales do you live in?:</label>
+    <input type="text" id="location" name="location" required><br>
+
+    <label>Are you registered to a local GP?</label><br>
+    <input type="radio" id="gpYes" name="gpRegistered" value="yes" required> Yes<br>
+    <input type="radio" id="gpNo" name="gpRegistered" value="no" required> No<br>
+
+    <label for="q2queries">Do you have any queries when it comes to healthcare and how to approach it?</label>
+    <textarea id="q2queries" name="q2queries" required></textarea><br>
+
+    <button class="healthSubmit" type="submit">Submit answers</button>
+</form>
+
+    <div th:replace="~{fragments/footer :: bootstrap-js}"></div>
+    <footer th:replace="~{fragments/footer}"></footer>
+</body>
+</html>

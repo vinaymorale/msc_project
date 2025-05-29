@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frequently asked questions</title>
+    <link rel="stylesheet" th:href="@{/stylesheet/FAQpage.css}">
+   <link th:replace="~{fragments/header :: bootstrap-css}" />
+</head>
+<body>
+<header th:replace="~{fragments/header}"></header>
+<section id="faq_section" class="faq_section">
+    <div class="title-area">
+        <h1>Frequently Asked Questions (FAQs)</h1>
+        <img src="/images/Qmark.jpg" alt="red question mark" class="title-img" >
+    </div>
+    <div class="filter_faq">
+        <label class="filter_topic" for="filter_topic">Filter:</label>
+        <select id="filter_topic">
+            <option value="all">All Questions</option>
+            <option value="about us">About Us</option>
+            <option value="events">Events</option>
+            <option value="resources">Resources</option>
+            <option value="joining">Joining</option>
+        </select>
+
+    </div>
+    <ul>
+        <li>
+            <div class="question" data-topic="about us">
+                <span>Type question about us here?</span>
+                <span class="icon"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+            </div>
+            <div class="answer">
+                <span>Type Answer here</span>
+
+            </div>
+        </li>
+        <li>
+            <div class="question" data-topic="about us">
+                <span>Type question about us here?</span>
+                <span class="icon"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+            </div>
+            <div class="answer">
+                <span>Type Answer here</span>
+
+            </div>
+        </li>
+        <li>
+            <div class="question" data-topic="events">
+                <span>Type events question here?</span>
+                <span class="icon"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+            </div>
+            <div class="answer">
+                <span>Type Answer here</span>
+
+            </div>
+        </li>
+        <li>
+            <div class="question" data-topic="events">
+                <span>Type events question here?</span>
+                <span class="icon"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+            </div>
+            <div class="answer">
+                <span>Type Answer here</span>
+
+            </div>
+        </li>
+        <li>
+            <div class="question" data-topic="about us">
+                <span>Type question about us here?</span>
+                <span class="icon"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+            </div>
+            <div class="answer">
+                <span>Type Answer here</span>
+
+            </div>
+        <li>
+            <div class="question" data-topic="resources">
+                <span>Type resources question here?</span>
+                <span class="icon"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+            </div>
+            <div class="answer">
+                <span>Type Answer here</span>
+
+            </div>
+        </li>
+        <li>
+            <div class="question" data-topic="joining">
+                <span>Type joining question here?</span>
+                <span class="icon"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+            </div>
+            <div class="answer">
+                <span>Type Answer here</span>
+
+            </div>
+        </li>
+        <li>
+            <div class="question" data-topic="joining">
+                <span>Type joining question here?</span>
+                <span class="icon"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+            </div>
+            <div class="answer">
+                <span>Type Answer here</span>
+
+            </div>
+        </li>
+        <li>
+            <div class="question" data-topic="resources">
+                <span>Type resources question here?</span>
+                <span class="icon"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+            </div>
+            <div class="answer">
+                <span>Type Answer here</span>
+
+            </div>
+        </li>
+    </ul>
+</section>
+<div th:replace="~{fragments/footer :: bootstrap-js}"></div>
+<footer th:replace="~{fragments/footer}"></footer>
+</body>
+<script th:src="@{/JavaScript/FAQpage.js}"></script>
+
+</html>

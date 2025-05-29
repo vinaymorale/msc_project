@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pending Comments</title>
+    <link th:replace="~{fragments/dashboardHeader::bootstrap-css}" />
+    <link rel="stylesheet" th:href="@{/stylesheet/pendingComments.css}">
+</head>
+<body>
+    <aside th:replace="~{fragments/dashboardHeader::sidebar}"></aside>
+    <main class="dashboard-content container">
+        <h1>Pending Comments and Replies</h1>
+
+        <!-- Pending Comments -->
+        <section>
+            <h2>Pending Comments</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="comment : ${pendingComments}">
+                    <td th:text="${comment.id}"></td>
+                    <td th:text="${comment.name ?: 'Anonymous'}"></td>
+                    <td th:text="${comment.email ?: 'N/A'}"></td>
+                    <td th:text="${comment.message}"></td>
+                    <td>
+                        <form th:action="@{/dashboard/approve-comment}" method="post" style="display:inline;">
+                            <input type="hidden" name="id" th:value="${comment.id}">
+                            <button class="btn btn-sm btn-success">Approve</button>
+                        </form>
+                        <form th:action="@{/dashboard/reject-comment}" method="post" style="display:inline;">
+                            <input type="hidden" name="id" th:value="${comment.id}">
+                            <button class="btn btn-sm btn-danger">Reject</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Pending Replies -->
+        <section>
+            <h2>Pending Replies</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Message</th>
+                    <th>Question ID</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="reply : ${pendingReplies}">
+                    <td th:text="${reply.id}"></td>
+                    <td th:text="${reply.name ?: 'Anonymous'}"></td>
+                    <td th:text="${reply.message}"></td>
+                    <td th:text="${reply.question_id}"></td>
+                    <td>
+                        <form th:action="@{/dashboard/approve-reply}" method="post" style="display:inline;">
+                            <input type="hidden" name="id" th:value="${reply.id}">
+                            <button class="btn btn-sm btn-success">Approve</button>
+                        </form>
+                        <form th:action="@{/dashboard/reject-reply}" method="post" style="display:inline;">
+                            <input type="hidden" name="id" th:value="${reply.id}">
+                            <button class="btn btn-sm btn-danger">Reject</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

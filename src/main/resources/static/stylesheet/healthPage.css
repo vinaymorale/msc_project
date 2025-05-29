@@ -1,0 +1,479 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+ body{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.top_sec{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    text-align: center;
+    padding: 20px;
+    flex-grow: 1;
+    margin-bottom: 250px;
+}
+.title {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 2.3rem;
+    font-weight: bolder;
+    color: #d50032;
+    margin: 10px 0;
+}
+
+.intro_para {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.intro_para p {
+    font-size: 1.1rem;
+    font-family: "Times New Roman", sans-serif;
+    margin: 0 0 20px 0;
+    line-height: 1.9;
+    width: 85%;
+}
+
+
+.web_link{
+    font-family: "Times New Roman", sans-serif;
+    font-weight: 600;
+    background-color: #d3003f;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 20px;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+}
+
+.web_link:hover{
+    background-color: #a9002c;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.web_link:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.map_filter, .map_container {
+    margin: 0;
+    padding: 0;
+}
+
+.map_filter{
+    font-family: "Times New Roman", sans-serif;
+    font-weight: bold;
+    color: #c9033f;
+    line-height: 1.9;
+    width: 85%;
+}
+
+#mapFilter{
+    margin-left: 5px;
+    font-family: "Times New Roman", sans-serif;
+    border: none;
+    border-radius: 50px;
+    font-weight: bolder;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    background-color: #d3003f;
+    color: white;
+}
+
+.map_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    margin-bottom: 50px;
+    margin-top: -200px;
+}
+
+.hospital_map, .clinics_map, .emergency_map {
+    width: 700px;
+    height: 300px;
+    border: 0;
+    display: block;
+}
+
+.map {
+    display: none;
+}
+
+.mentalHealth-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+    flex-grow: 1;
+    margin-bottom: 50px;
+}
+
+.mental-title {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 10px;
+    color: #d50032;
+    margin: 0 0 20px 0;
+}
+
+.mentalHealth-intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.mentalHealth-intro p {
+    font-size: 1.1rem;
+    font-family: "Times New Roman", sans-serif;
+    margin: 0 0 20px 0;
+    width: 85%;
+}
+
+.mentalHealth-linkArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 40px 110px 50px 110px;
+    text-align: center;
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: #c9033f;
+    border-radius: 8px;
+}
+
+.mentalHealth-buttonText{
+    font-family: "Times New Roman", sans-serif;
+    font-weight: lighter;
+    color: #c9033f;
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+    width: 85%;
+}
+
+.mentalHealth-link{
+    font-family: "Times New Roman", sans-serif;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    background-color: #d3003f;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.mentalHealth-link:hover{
+    background-color: #a9002c;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.mentalHealth-link:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.mentalHealth-map{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.mentalHealth-map p{
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    font-family: "Times New Roman", sans-serif;
+    font-weight: bold;
+    color: #c9033f;
+    margin: 0 0 8px 0;;
+    line-height: 1.2;
+    width: 85%;
+}
+
+.crisis-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 90px 110px 50px 110px;
+    text-align: center;
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: #c9033f;
+    border-radius: 8px;
+}
+
+.crisis-title{
+    font-family: "Times New Roman", sans-serif;
+    font-size: 2rem;
+    font-weight: bolder;
+    text-decoration: underline;
+    letter-spacing: 1px;
+    padding: 10px;
+    color: #d50032;
+    margin: 0 0 20px 0;
+}
+
+.crisis-para{
+    font-family: "Times New Roman", sans-serif;
+    font-weight: 90;
+    font-size: 1.1rem;
+    margin: 0 0 20px 0;
+    line-height: 1.9;
+    width: 85%;
+}
+
+.crisis-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    width: 85%;
+    text-align: left;
+}
+
+.crisis-list li {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: -10px;
+    line-height: 1.8;
+    background: #f9f9f9;
+    padding: 10px;
+    border-left: 5px solid #c9033f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.crisis-list li a {
+    color: #c9033f;
+    text-decoration: none;
+}
+
+.crisis-list li a:hover {
+    text-decoration: underline;
+}
+.survey-title{
+    font-family: "Times New Roman", sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 10px;
+    color: #d50032;
+    align-content: center;
+    align-items: center;
+    margin: auto ;
+}
+.healthQueryForm{
+    display: flex;
+    flex-direction: column;;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    margin: 0 auto 30px auto;
+    padding: 5px;
+    background-color: #fff;
+    border: 2px solid #c9033f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: "Times New Roman", sans-serif;
+}
+
+.healthQueryForm label{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 4px;
+    display: block;
+    text-align: left;
+    width: 100%;
+}
+
+.healthQueryForm input,
+.healthQueryForm textarea{
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: "Times New Roman", sans-serif;
+    font-size: 1rem;
+}
+
+input[type="radio"] {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+
+label#q1registered {
+    display: block;
+    font-family: "Times New Roman", sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+input[type="radio"] + span {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 1rem;
+    color: #333;
+}
+
+input[type="radio"] + span, input[type="radio"] + br {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.healthQueryForm .healthSubmit {
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    background-color: #d3003f;
+}
+
+.healthQueryForm .healthSubmit:hover {
+    background-color: #a00233;
+}
+
+.healthQueryForm textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+@media (max-width: 768px) {
+    .healthQueryForm {
+        width: 90%;
+        padding: 15px;
+    }
+}
+
+.safety-listSection{
+    margin: auto;
+    width: 85%;
+    text-align: center;
+}
+
+.safety-listTitle{
+    font-family: "Times New Roman", sans-serif;
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #d50032;
+    margin-bottom: 15px;
+}
+
+.SafetyList{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.SafetyList li{
+    background-color: #fff;
+    border: 2px solid #c9033f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.SafetyList li:hover{
+    background-color: #fae6e6;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.SafetyList li h3{
+    font-family: "Times New Roman", sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #d3003f;
+    margin-bottom: 10px;
+}
+
+.SafetyList li p{
+    font-family: "Times New Roman", sans-serif;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.SafetyList li a {
+    font-family: "Times New Roman", sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #c9033f;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.SafetyList li a:hover{
+    color: #a9002c;
+    text-decoration: underline;
+}
+
+.SafetyList li span {
+    display: block;
+    font-family: "Times New Roman", sans-serif;
+    font-size: 1rem;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheet/healthPage.css"/>
+    <link th:replace="~{fragments/header :: bootstrap-css}" />
+    <title>Safety and Stability</title>
+</head>
+<body>
+<header th:replace="~{fragments/header}"></header>
+<section class="top_sec">
+    <h1 class="title">Safety and Stability information</h1>
+    <div class="intro_para">
+        <p>This page is dedicated to the vital role of safety and stability in aiding
+            the integration and well-being of migrants in Wales and the UK. Feeling safe and secure
+            is the foundation in building a life and enabling people to happily settle into
+            new communities. This page highlights the important messages regarding safety and stability,
+            including the protection from discrimination, help and aid available, and fair
+            access to employment opportunities. Our goal is to provide valuable information and resources
+            to help create an environment where everyone feels safe, stable, and welcomed.</p>
+    </div>
+    <a href="https://www.gov.wales/migrant-integration-framework-html#135684" target="_blank">
+        <button class="web_link">Click here for more info from the GOV website</button>
+    </a>
+</section>
+    <section class="safety-listSection">
+        <h1 class="safety-listTitle">Organisations that can help you</h1>
+        <ul class="SafetyList">
+            <li th:each="safety : ${safetyItems}">
+                <h3 th:text="${safety.name}"></h3>
+                <p th:text="${safety.description}"> </p>
+                <p>Location: <span th:text="${safety.location}"></span></p>
+                <a th:href="${safety.link}" th:text="'Click here to go to their website'" target="_blank"></a>
+                <p>Contact: <span th:text="${safety.phone}"></span></p>
+            </li>
+        </ul>
+    </section>
+
+
+<div th:replace="~{fragments/footer :: bootstrap-js}"></div>
+<footer th:replace="~{fragments/footer}"></footer>
+</body>
+</html>

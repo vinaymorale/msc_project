@@ -1,0 +1,217 @@
+body {
+    font-family: "Times New Roman", sans-serif;
+    background-color: #fff;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.skills-item,
+.resources-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.resources-item {
+    outline: 2px solid #d50032;
+    outline-offset: 4px;
+}
+
+.skills-item:hover {
+    transform: translateY(-5px);
+    outline: 2px solid #d50032;
+    outline-offset: 4px;
+    background-color: #ffc9c9;
+}
+
+.skills-item:active {
+    background-color: #a9002c;
+}
+
+.skills-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.title{
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+    color: #d50032 !important;
+    font-family: "Times New Roman", serif;
+    font-weight: bolder;
+}
+
+.title2{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #d50032 !important;
+    font-family: "Times New Roman", serif;
+    font-weight: bold;
+}
+.skills-item h2,
+.resources-item h2 {
+    font-size: 2.3rem;
+    color: #d50032 !important;
+    font-family: "Times New Roman", sans-serif;
+    font-weight: bolder;
+}
+
+.skills-item p,
+.resources-item p {
+    padding: 0 15px 15px;
+    font-size: 1rem;
+    font-family: "Times New Roman", sans-serif;
+
+}
+
+.skills-item a,
+.resources-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.duration,
+.date {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+h1,
+h2 {
+    font-size: 2.3rem;
+    font-weight: bolder;
+    text-align: center;
+    color: #d50032 !important;
+    font-family: "Times New Roman", sans-serif;
+}
+
+#mainText,
+#mainText1 {
+    padding-top: 25px;
+    text-align: justify;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+#readMore {
+    padding-top: 25px;
+    text-align: center;
+}
+
+.resourceLink {
+    text-decoration: underline !important;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    background-color: #d3003f;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.resource {
+    color: #d50032 !important;
+}
+
+#toggleButton {
+    background-color: #d50032;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin: 20px auto;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+#toggleButton:hover {
+    background-color: #a9002c;
+}
+
+.work-importance-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#learnMore {
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: auto;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    background-color: #d3003f;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#learnMore:hover {
+    background-color: #a9002c;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: #d50032 !important;
+    padding-top: 25px;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.button-link {
+    display: inline-block;
+    background-color: #d50032;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 0;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    transition: background-color 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: #a9002c;
+}
+
+li {
+    color: black;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+
+li strong {
+    color: #d50032;
+}
+#mainText1 {
+    padding-top: 25px;
+    text-align: justify;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In/Register</title>
+  <link th:replace="~{fragments/header :: bootstrap-css}" />
+  <link rel="stylesheet" th:href="@{stylesheet/signregister.css}">
+  <script th:src="@{JavaScript/signRegister.js}" defer></script>
+
+
+</head>
+<body>
+<header th:replace="~{fragments/header}"></header>
+
+<div class="auth-container">
+  <div class="form-box">
+    <h2>Log In</h2>
+    <div th:if="${loginErrorMessage}" class="alert alert-danger" role="alert">
+      <p th:text="${loginErrorMessage}"></p> <!-- Login error message -->
+    </div>
+    <form action="/profile" method="post" th:action="@{/profile}">
+      <label for="loginEmail">Email Address:</label>
+      <input type="email" id="loginEmail" name="email" required>
+
+      <label for="loginPassword">Password:</label>
+      <div class="password-container">
+        <input type="password" id="loginPassword" name="password" required>
+        <i id="login-password-icon" class="bi bi-eye" onclick="togglePasswordVisibility('loginPassword', 'login-password-icon')"></i>
+      </div>
+
+      <button type="submit">Log In</button>
+    </form>
+  </div>
+</div>
+
+<div th:replace="~{fragments/footer :: bootstrap-js}"></div>
+<footer th:replace="~{fragments/footer}"></footer>
+</body>
+</html>

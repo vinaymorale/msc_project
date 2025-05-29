@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In/Register</title>
+  <link th:replace="~{fragments/header :: bootstrap-css}" />
+  <link rel="stylesheet" th:href="@{stylesheet/profilePage.css}">
+</head>
+<body>
+  <header th:replace="~{fragments/header}"></header>
+  <div class="profileContainer">
+    <div class="profileDetails">
+      <div class="profile-picture">
+        <img th:src="@{/images/red.png}" alt="Profile Picture">
+      </div>
+      <h2 th:text="${currentUser.name} + ' ' + ${currentUser.surname}"></h2>
+      <p th:text="${currentUser.email}"></p>
+      <h4 th:text="${currentUser.role}"></h4>
+    </div>
+  </div>
+  <div th:replace="~{fragments/footer :: bootstrap-js}"></div>
+  <footer th:replace="~{fragments/footer}"></footer>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Preferences Questionnaire</title>
+    <link th:replace="~{fragments/header :: bootstrap-css}" />
+    <link rel="stylesheet" th:href="@{/stylesheet/WorkSurvey.css}">
+    <script th:src="@{JavaScript/WorkSurvey.js}" defer></script>
+</head>
+<!-- Success Message -->
+<div th:if="${successMessage}" class="alert alert-success">
+    <p th:text="${successMessage}"></p>
+</div>
+<body><div class="container">
+    <h1>Work Preferences Questionnaire</h1>
+    <form method="post" action="/work-survey">
+
+        <!-- Details Section -->
+        <div id="details-section">
+            <h2>Step 1: Provide Your Details</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <!-- Questionnaire Section -->
+        <div id="questionnaire-section">
+            <h2>Step 2: Answer the Questionnaire</h2>
+
+            <label for="question1">Question 1: What is your primary reason for seeking work?</label>
+            <select id="question1" name="question1" required>
+                <option value="">Select an option</option>
+                <option value="family">To support myself and my family</option>
+                <option value="experience">To gain work experience in a new environment</option>
+                <option value="skills">To learn new skills and enhance my career</option>
+                <option value="friend">To connect with others and build a social network</option>
+                <option value="money">To improve my financial situation</option>
+            </select>
+
+            <label for="question2">Question 2: What is your level of education?</label>
+            <select id="question2" name="question2" required>
+                <option value="">Select an option</option>
+                <option value="Secondary school">High school or less</option>
+                <option value="college">Some college or vocational training</option>
+                <option value="bachelor">Bachelor's degree</option>
+                <option value="master">Master's degree or higher</option>
+                <option value="certification">Professional certifications or licenses</option>
+            </select>
+
+            <label for="question3">Question 3: How comfortable are you with working in a language that is not your first language?</label>
+            <select id="question3" name="question3" required>
+                <option value="">Select an option</option>
+                <option value="very_comfortable">Very comfortable; I can easily communicate in the second language</option>
+                <option value="comfortable">Comfortable; I understand the basics and can improve</option>
+                <option value="neutral">Neutral; I can work, but prefer limited communication</option>
+                <option value="uncomfortable">Uncomfortable; I struggle with the language barrier</option>
+                <option value="not_comfortable">Not comfortable at all; I need a job where my first language is used</option>
+            </select>
+
+            <label for="question4">Question 4: What type of work environment are you looking for?</label>
+            <select id="question4" name="question4" required>
+                <option value="">Select an option</option>
+                <option value="office">A structured office or corporate environment</option>
+                <option value="remote">A flexible, remote or home-based role</option>
+                <option value="customer_service">A customer-facing or retail environment</option>
+                <option value="active">A job where I can be physically active and on my feet</option>
+                <option value="healthcare">A job in healthcare or service industries</option>
+            </select>
+
+            <label for="question5">Question 5: How do you feel about working with a team?</label>
+            <select id="question5" name="question5" required>
+                <option value="">Select an option</option>
+                <option value="prefer_team">I prefer working in a team and collaborating with others</option>
+                <option value="independent_team">I can work with a team, but also enjoy some independent tasks</option>
+                <option value="prefer_independent">I prefer to work alone most of the time</option>
+                <option value="comfortable_both">I’m comfortable with both team-based and independent work</option>
+                <option value="prefer_leader">I prefer to be a leader and guide a team</option>
+            </select>
+
+            <label for="question6">Question 6: Which of the following skills do you have experience with?</label>
+            <select id="question6" name="question6" required>
+                <option value="">Select an option</option>
+                <option value="administrative">Administrative or clerical skills (e.g., scheduling, office tasks)</option>
+                <option value="technical">Technical skills (e.g., IT, software, engineering)</option>
+                <option value="customer_service">Customer service or sales skills</option>
+                <option value="manual_labour">Physical or manual labour skills (e.g., construction, warehouse)</option>
+                <option value="creative">Creative skills (e.g., graphic design, writing, arts)</option>
+            </select>
+
+            <label for="question7">Question 7: What type of job schedule works best for you?</label>
+            <select id="question7" name="question7" required>
+                <option value="">Select an option</option>
+                <option value="full_time">Full-time, with consistent working hours</option>
+                <option value="part_time">Part-time, flexible schedule</option>
+                <option value="shift">Shifts, including evenings or weekends</option>
+                <option value="freelance">Freelance or contract-based work</option>
+                <option value="seasonal">A job with seasonal work or short-term projects</option>
+            </select>
+
+            <label for="question8">Question 8: Which industry would you like to work in?</label>
+            <select id="question8" name="question8" required>
+                <option value="">Select an option</option>
+                <option value="retail">Retail or hospitality</option>
+                <option value="healthcare">Healthcare or caregiving</option>
+                <option value="technology">Technology and IT</option>
+                <option value="trades">Skilled trades (e.g., construction, plumbing)</option>
+                <option value="customer_service">Customer service or call centres</option>
+            </select>
+
+            <label for="question9">Question 9: How important is job stability to you?</label>
+            <select id="question9" name="question9" required>
+                <option value="">Select an option</option>
+                <option value="very_important">Very important; I prefer long-term, stable employment</option>
+                <option value="important">Important, but open to contract or temporary work</option>
+                <option value="not_important">Not as important; I’m okay with short-term or freelance work</option>
+                <option value="less_important">Less important; I want to explore various job opportunities</option>
+                <option value="not_important_at_all">Not important at all; I want to change jobs frequently</option>
+            </select>
+
+            <label for="question10">Question 10: How would you like your job to impact your personal life?</label>
+            <select id="question10" name="question10" required>
+                <option value="">Select an option</option>
+                <option value="balance">I want a job that allows for a healthy work-life balance</option>
+                <option value="travel">I prefer a job that provides opportunities for travel or adventure</option>
+                <option value="support_family">I want a job that allows me to support my family financially</option>
+                <option value="career_advancement">I’m looking for a job that offers opportunities for career advancement</option>
+                <option value="social_interaction">I prefer a job that allows me to interact and connect with people</option>
+            </select>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+    <div> <button class="returnWork">
+        <a href="/workPage" > Go back to work page </a>
+    </button>
+    </div>
+</div>
+
+</body>
+</html>

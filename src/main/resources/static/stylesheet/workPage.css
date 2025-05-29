@@ -1,0 +1,180 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    font-family: "Times New Roman", serif;
+}
+
+/* Container for the page */
+.container {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+    color: #333;
+}
+
+/* Title and Text Styling */
+.housing-info h1 {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+    color: #d50032 !important;
+    font-family: "Times New Roman", serif;
+    font-weight: bolder;
+}
+
+#mainText {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-family: "Times New Roman", serif;
+}
+
+.housing-info .btn {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #d3003f; /* Red background */
+    color: white; /* White text */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.housing-info .btn:hover {
+    background-color: #a9002c;
+    transform: scale(1.05);
+}
+
+/* Work Item Styling */
+.work-item {
+    background-color: #fff;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.work-item a {
+    color: #333;
+    text-decoration: none;
+}
+
+.work-item a:hover {
+    color: #d50032;
+}
+
+.work-item h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.work-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.job-type, .date {
+    font-weight: bold;
+    color: #d50032;
+}
+
+
+/* Title2 Styling */
+.title2 {
+    color: #d50032;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Ordered List Styling */
+ol {
+    padding-left: 20px;
+}
+
+ol li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Button Container for Survey */
+.button-containerx {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.button-containerx .btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    background-color: #d50032;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.button-containerx .btn:hover {
+    background-color: #a9002c;
+}
+
+/* Event Cards Image Styling */
+.text-search li {
+    background-color: #fff;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%; /* Full width to ensure all event cards are the same size */
+    box-sizing: border-box;
+    font-family: "Times New Roman", serif;
+    overflow: hidden;
+}
+
+.text-search li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure All Images Inside Event Cards are Uniform */
+.text-search img {
+    width: 100%; /* Image will fill the width of the container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 200px; /* Set maximum height to avoid overflow */
+    object-fit: cover; /* Ensures the image fills the space and maintains aspect ratio */
+    border-radius: 8px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .work-item {
+        padding: 1rem;
+    }
+
+    .title, .title2 {
+        font-size: 1.8rem;
+    }
+
+    ol {
+        padding-left: 10px;
+    }
+
+    /* Adjust for smaller screens */
+    .text-search {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .text-search li {
+        width: 48%; /* Adjust width for responsiveness */
+        margin-bottom: 20px;
+    }
+}

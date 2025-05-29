@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:replace="~{fragments/header :: bootstrap-css}" />
+    <link rel="stylesheet" th:href="@{stylesheet/housingPage.css}">
+    <title>Housing</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("housingForm");
+
+            form.addEventListener("submit", function (event) {
+                const messageField = document.getElementById("message").value.trim();
+                if (messageField === "") {
+                    alert("Message is required!");
+                    event.preventDefault();
+                    return; // Stop the form from submitting
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header th:replace="~{fragments/header}"></header>
+
+    <main class="container">
+        <section class="housing-info">
+            <h1>Housing Information</h1>
+            <p>
+                The availability of adequate, affordable, and stable housing is an essential
+                component of migrant integration, as it can provide individuals with stability,
+                security, and a sense of belonging and well-being. Providing access to good
+                quality housing that meets the needs of individuals and families can
+                therefore be an important factor in promoting integration.
+            </p>
+            <p>
+                While considering housing needs, it is important to take into account not
+                only the quality, size, affordability, and suitability of available housing,
+                but also the associated social and cultural aspects. Migrants to
+                Wales may find renting a house or room difficult due to lack of credit history,
+                references, a guarantor, or bond money. Understanding housing options and
+                managing precarious financial situations can help ensure stability.
+            </p>
+            <a href="https://www.gov.wales/migrant-integration-framework-html#135676"
+               target="_blank" class="btn btn-primary">Visit Official Government Page For More</a>
+        </section>
+    </main>
+
+    <div class="container form-container">
+        <h2>Housing Comments/Questions</h2>
+        <p>Have a question or comment? Share it below!</p>
+        <div th:if="${successMessage}" class="alert alert-success" role="alert">
+            <p th:text="${successMessage}"></p>
+        </div>
+        <div th:if="${errorMessage}" class="alert alert-danger" role="alert">
+            <p th:text="${errorMessage}"></p>
+        </div>
+        <form action="/housing/housing-questionnaire" method="post" id="housingForm">
+            <div class="form-group">
+                <label for="name">Name (optional):</label>
+                <input type="text" id="name" name="name" class="form-control"
+                       placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email (optional):</label>
+                <input type="email" id="email" name="email" class="form-control"
+                       placeholder="Your Email">
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" class="form-control"
+                          placeholder="Your Question or Comment" required></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Displaying Submitted Questions -->
+    <div class="container">
+        <h2>Community Comments</h2>
+        <ul>
+            <div th:if="${commentSuccessMessage}" class="alert alert-success" role="alert">
+                <p th:text="${commentSuccessMessage}"></p>
+            </div>
+            <div th:if="${commentErrorMessage}" class="alert alert-danger" role="alert">
+                <p th:text="${commentErrorMessage}"></p>
+            </div>
+            <li th:each="question : ${questions}">
+                <strong th:text="${#strings.isEmpty(question.name) ? 'Anonymous' : question.name}">
+                </strong>:
+                <p th:text="${question.message}"></p>
+
+                <!-- Display Replies -->
+                <ul>
+                    <li th:each="reply : ${question.replies}">
+                        <p>
+                            <strong th:text="${#strings.isEmpty(reply.name) ? 'Anonymous' : reply.name}"></strong>:
+                            <span th:text="${reply.message}"></span>
+                        </p>
+                    </li>
+                </ul>
+
+                <!-- Reply Form -->
+                <form action="/housing/submit-reply" method="post" class="reply-form">
+                    <input type="hidden" name="questionId" th:value="${question.id}">
+
+                    <div class="form-group">
+                        <label for="replyName">Name (optional):</label>
+                        <input type="text" id="replyName" name="name" class="form-control"
+                               placeholder="Your Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="replyMessage">Reply:</label>
+                        <textarea id="replyMessage" name="replyMessage" class="form-control"
+                                  placeholder="Your Reply" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-secondary">Reply</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+
+
+    <footer th:replace="~{fragments/footer}"></footer>
+</body>
+</html>

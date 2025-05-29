@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/stylesheet/contactStyle.css"/>
+    <link th:replace="~{fragments/header :: bootstrap-css}" />
+    <script src="/JavaScript/contactsFunctionality.js"></script>
+</head>
+<body>
+<header th:replace="~{fragments/header}"></header>
+
+<section class="container">
+    <h1>Contact Details</h1>
+
+<!--    <form action="#" onsubmit="submitFunction()" class="form" id="form">-->
+<!--        <div class="input-box">-->
+<!--            <label>Full Name</label>-->
+<!--            <input type="text" placeholder="Enter full name" required id="fullName" />-->
+<!--        </div>-->
+
+<!--        <div class="input-box">-->
+<!--            <label>Email Address</label>-->
+<!--            <input type="text" placeholder="Enter email address" required id="emailAddress"/>-->
+<!--        </div>-->
+
+<!--        <div class="input-box">-->
+<!--            <label>Phone Number</label>-->
+<!--            <input type="tel" placeholder="Enter phone number" required id="phoneNumber"/>-->
+<!--        </div>-->
+
+<!--        <div class="input-box address">-->
+<!--            <label>Inquiry</label>-->
+<!--            <input type="text" placeholder="Enter subject" required id="subject"/>-->
+<!--            <input type="text" placeholder="Enter your query" required id="query"/>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;        <button type="submit" onclick="submitFunction(event)">Submit</button>&ndash;&gt;-->
+<!--        <button type="submit" >Submit</button>-->
+<!--    </form>-->
+    <form action="#" onsubmit="submitFunction(event)" class="form" id="form">
+        <div class="input-box">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter full name" required id="fullName" />
+        </div>
+
+        <div class="input-box">
+            <label>Email Address</label>
+            <input type="text" placeholder="Enter email address" required id="emailAddress"/>
+        </div>
+
+        <div class="input-box">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="Enter phone number" required id="phoneNumber"/>
+        </div>
+
+        <div class="input-box address">
+            <label>Inquiry</label>
+            <input type="text" placeholder="Enter subject" required id="subject"/>
+            <input type="text" placeholder="Enter your query" required id="query"/>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</section>
+</body>
+<link rel="stylesheet" th:href="@{/stylesheet/FAQpage.css}">
+</head>
+<body>
+<section id="faq_section" class="faq_section">
+    <div class="title-area">
+        <h1>Frequently Asked Questions (FAQs)</h1>
+        <img src="/images/Qmark.jpg" alt="red question mark" class="title-img" >
+    </div>
+    <div class="filter_faq">
+        <label class="filter_topic" for="filter_topic">Filter:</label>
+        <select id="filter_topic">
+            <option value="all">All Questions</option>
+            <option value="about us">About Us</option>
+            <option value="events">Events</option>
+            <option value="resources">Resources</option>
+            <option value="joining">Joining</option>
+        </select>
+
+    </div>
+    <ul>
+        <li>
+            <div class="question" data-topic="about us">
+                <span>Who are we?</span>
+                <span class="icon"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+            </div>
+            <div class="answer">
+                <span>We are Ludek, a Polish community group in South Wales
+                who aim to bring the Polish people of wales together.</span>
+
+            </div>
+        </li>
+        <li>
+            <div class="question" data-topic="about us">
+                <span>What do we do?</span>
+                <span class="icon"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+            </div>
+            <div class="answer">
+                <span>Our main aim to help the Polish people in South Wales by organising events,
+                offering help and support as well as connecting families and communities together</span>
+
+            </div>
+        </li>
+        <li>
+            <div class="question" data-topic="events">
+                <span>What type of events do we hold?</span>
+                <span class="icon"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+            </div>
+            <div class="answer">
+                <span>From Polish fairs to dinners and balls, we aim to try include everyone in our events,
+                we want to bring the community together and make everybody feel at home.</span>
+
+            </div>
+        </li>
+        <li>
+            <div class="question" data-topic="events">
+                <span>How can I attend these events?</span>
+                <span class="icon"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+            </div>
+            <div class="answer">
+                <span>By viewing our events section on the website, you can see which events are upcoming,
+                all we ask is that you turn up and enjoy yourself.</span>
+
+            </div>
+        </li>
+        <li>
+            <div class="question" data-topic="about us">
+                <span>Is it just South Wales that we operate?</span>
+                <span class="icon"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+            </div>
+            <div class="answer">
+                <span>Our main focus is South Wales, however we also connect to surrounding cities,
+                such as Gloucester and North Wales with their communities also.</span>
+
+            </div>
+        <li>
+            <div class="question" data-topic="resources">
+                <span>What resources do you guys provide?</span>
+                <span class="icon"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+            </div>
+            <div class="answer">
+                <span>Our aim is to help anybody who may have any problems or troubles to see them fixed.
+                We provide a range of information spanning from work and housing, to education and support.
+                Helping the community in any way we can is our objective</span>
+
+            </div>
+        </li>
+        <li>
+            <div class="question" data-topic="joining">
+                <span>Is there a membership?</span>
+                <span class="icon"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+            </div>
+            <div class="answer">
+                <span>There is no membership, however you are able to sign up for updates and newsletters
+                containing important information about events and recent news.</span>
+
+            </div>
+        </li>
+        <li>
+            <div class="question" data-topic="joining">
+                <span>How do I join?</span>
+                <span class="icon"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+            </div>
+            <div class="answer">
+                <span>On our website you can sign up using an e-mail address and phone number</span>
+
+            </div>
+        </li>
+        <li>
+            <div class="question" data-topic="resources">
+                <span>Is the information provided reliable?</span>
+                <span class="icon"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+            </div>
+            <div class="answer">
+                <span>Our main source is the government website along with any other reliable sources.
+                The information and help we want to give is authentic and of the highest accuracy. </span>
+
+            </div>
+        </li>
+    </ul>
+</section>
+<div th:replace="~{fragments/footer :: bootstrap-js}"></div>
+<footer th:replace="~{fragments/footer}"></footer>
+</body>
+<script th:src="@{/JavaScript/FAQpage.js}"></script>
+
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Work</title>
+    <link th:replace="~{fragments/header :: bootstrap-css}" />
+    <link rel="stylesheet" th:href="@{/stylesheet/workPage.css}">
+</head>
+<body>
+<header th:replace="~{fragments/header}"></header>
+
+
+<!-- Main Content -->
+<div class="work-importance-container container">
+    <h1 class="housing-info">
+        Importance Of Work In Integration
+    </h1>
+    <p id="mainText">
+        Being in employment (particularly in job roles which match migrants' skills and qualifications) can be a critical factor in promoting integration and independence. Employment provides social status, social connections, and a sense of purpose. Supporting entrepreneurship and self-employment opportunities can also provide additional avenues for economic integration.
+    </p>
+    <a href="https://www.gov.wales/migrant-integration-framework-html#135674" class="housing-info btn">
+        Learn More
+    </a>
+</div>
+
+<!-- Work Information Section -->
+<div class="work-item container">
+    <a href="https://uk.indeed.com/">
+        <h2>Work Information Title</h2>
+        <p>Short description of work details.</p>
+        <p>
+            Job Type: <span class="job-type">Full-time</span>
+        </p>
+        <p>
+            Expires On: <span class="date">31/12/2024</span>
+        </p>
+    </a>
+</div>
+
+<!-- Work Questionnaire Instructions -->
+<div class="container">
+    <h2 class="title2">Instructions for the Questionnaire</h2>
+    <ol>
+        <li><strong>Take Your Time:</strong> Read each question carefully and take your time to answer. There is no need to rush.</li>
+        <li><strong>Be Honest:</strong> Answer truthfully based on your personal experiences and preferences. Your honest answers will help us provide better guidance.</li>
+        <li><strong>Keep It Simple:</strong> If you are unsure about a question, choose the answer that feels closest to your situation.</li>
+        <li><strong>Stay Focused:</strong> Complete the questionnaire in one sitting to ensure accurate results. It should take about <em>60 Minutes</em> to finish.</li>
+        <li><strong>Ask for Help:</strong> If you have difficulty understanding a question, feel free to ask someone you trust for assistance.</li>
+        <li><strong>Privacy Matters:</strong> Your responses will remain private and will only be used to help you find the right career sector.</li>
+    </ol>
+</div>
+
+<!-- Start Survey Button -->
+<div class="button-containerx">
+    <a href="/Work-Survey" class="btn">Start Survey</a>
+</div>
+
+
+<footer th:replace="~{fragments/footer}"></footer>
+</body>
+</html>

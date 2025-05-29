@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organisations</title>
+    <link th:replace="~{fragments/header :: bootstrap-css}" />
+    <link rel="stylesheet" th:href="@{/stylesheet/organisationsPage.css}">
+</head>
+<body>
+<header th:replace="~{fragments/header}"></header>
+<h1>Organisations</h1>
+<p id="mainText">
+    This page showcases a selection of organizations in South Wales that have either supported or collaborated with Ludek Polonia. These organizations play an important role in helping us build connections, offer resources, and strengthen the bonds within our community. From sponsors to partners, we are proud to highlight their contributions.
+</p>
+<section class="organisations-grid">
+    <div class="organisations-item" th:each="organisations : ${organisationsList}">
+        <img class="organisations-image" th:src="@{/images/{logoName}(logoName=${organisations.logo})}" alt="Organisation Logo">
+        <div class="organisations-content">
+            <h2 th:text="${organisations.name}"></h2>
+            <p th:text="${organisations.description}"></p>
+        </div>
+    </div>
+</section>
+<div th:replace="~{fragments/footer :: bootstrap-js}"></div>
+<footer th:replace="~{fragments/footer}"></footer>
+</body>
+</html>

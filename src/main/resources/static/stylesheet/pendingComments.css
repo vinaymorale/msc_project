@@ -1,0 +1,169 @@
+body {
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    font-family: "Times New Roman", serif;
+}
+
+/* Sidebar */
+.sidebar {
+    font-family: fantasy;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px; /* Fixed width of the sidebar */
+    background-color: #f0f8ff;
+    border-right: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/* Sidebar Links */
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-link i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.sidebar-link:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Main Content */
+.dashboard-content {
+    margin-left: 220px; /* Space for the sidebar plus a gap */
+    padding: 20px;
+    background-color: #f8f9fa;
+    flex-grow: 1;
+    min-height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box; /* Ensures padding doesn't add to the width */
+}
+
+/* Page Heading */
+h1 {
+    font-size: 2rem;
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Pending Comments Section */
+.pending-comments {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    font-size: 0.9rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.pending-comments thead {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pending-comments th,
+.pending-comments td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.pending-comments tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Buttons for Approve/Reject */
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button.btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+button.btn-success:hover {
+    background-color: #218838;
+}
+
+button.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+button.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Alerts for Messages */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .dashboard-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .pending-comments th,
+    .pending-comments td {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Safety Information</title>
+    <link th:replace="~{fragments/dashboardHeader::bootstrap-css}" />
+    <link rel="stylesheet" th:href="@{/stylesheet/AddEvent.css}">
+</head>
+<body>
+<aside th:replace="~{fragments/dashboardHeader::sidebar}"></aside>
+<div class="dashboard-content">
+    <h1 class="title">Add Safety and Stability Information and Help</h1>
+
+    <form action="#" th:action="@{/dashboard/AddSafetyInfo}" method="post">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+        </div>
+
+        <div class="form-group">
+            <label for="link">Link:</label>
+            <input type="url" id="link" name="link" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required>
+        </div>
+
+        <button type="submit">Add Safety Information</button>
+    </form>
+
+    <a href="/safetyPage">Return to safety page</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludek Polish Community</title>
+    <link th:replace="~{fragments/header :: bootstrap-css}" />
+    <script th:src="@{JavaScript/EventsPage.js}" defer></script>
+    <link rel="stylesheet" th:href="@{/stylesheet/stylesheet.css}">
+    <script th:src="@{JavaScript/eventspage.js}" defer></script>
+
+</head>
+<body>
+    <header th:replace="~{fragments/header}"></header>
+
+    <div class="container home-section">
+        <h2 class="section-heading">Events</h2>
+            <div class="item-row">
+            <div class="item-column" th:each="event : ${events}">
+                <div class="event-card">
+                    <h3 th:text="${event.title}">Event Title</h3>
+                    <p>Date: <span th:text="${event.date}">2024-12-01</span></p>
+                    <p>Location: <span th:text="${event.location}">Sample Location</span></p>
+                    <p>Category: <span th:text="${event.category}">Sample Category</span></p>
+                    <p>Description: <span th:text="${event.description}">Sample Description</span></p>
+                    <img th:src="${event.imageUrl}" alt="Event Image" style="max-width: 300px;">
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <div th:replace="~{fragments/footer :: bootstrap-js}"></div>
+    <footer th:replace="~{fragments/footer}"></footer>
+</body>
+</html>

@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Times New Roman", serif;
+    background-color: #f4f4f4;
+    /*justify-content: center;*/
+    align-items: center;
+    min-height: 100vh; /* Full height of the viewport */
+}
+
+.auth-container {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Stack vertically on smaller screens */
+}
+
+.form-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 520px;
+    /*height: 550px;*/
+    font-family: "Times New Roman", serif;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 1000;
+    font-family: Jazz LET, fantasy;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+input, select {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #d3003f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a9002c;
+}
+
+/* Password container with eye icon */
+.password-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.password-container input {
+    flex: 1;
+}
+
+.password-container i {
+    margin-left: 10px;
+    cursor: pointer;
+    color: #555;
+    font-size: 1.2rem;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.password-container i:hover {
+    color: #d3003f;
+}
+
+.helper-text {
+    font-size: 0.85rem;
+    color: #666;
+    /*margin-top: 5px;*/
+    /*margin-bottom: 10px;*/
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .auth-container {
+        flex-direction: column;
+    }
+
+    .form-box {
+        width: 100%;
+        max-width: 400px;
+    }
+}

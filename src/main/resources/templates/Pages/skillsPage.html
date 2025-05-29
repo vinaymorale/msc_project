@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Page</title>
+    <link th:replace="~{fragments/header :: bootstrap-css}" />
+    <link rel="stylesheet" th:href="@{/stylesheet/skillsPage.css}">
+</head>
+<body>
+<header th:replace="~{fragments/header}"></header>
+<h1 class="title">Importance Of Education In Integration</h1>
+<p id="mainText">Education and training can provide individuals with the skills and knowledge they need to succeed in the labour market and participate fully in society. Access to quality and timely education and training opportunities (or opportunities to certify evidence of skills brought to the UK) can therefore be an important factor in promoting integration. Language proficiency, specifically, is vital in advancing social cohesion and a sense of belonging. The ability to speak, read, and write in English or Welsh is essential for accessing education, employment, and other services. It can also help migrants to communicate effectively with their communities and build social connections. Therefore, measuring the English language proficiency of migrants in Wales could provide insights into their integration and social inclusion.</p>
+<p id="readMore">If you want to learn more, <a href="https://www.gov.wales/migrant-integration-framework-html#:~:text=Domain%205%3A%20education%20and%20skills%20(including%20language%2C%20communication%20and%20digital)">click here!</a></p>
+<button id="toggleButton">View Learning Resources</button>
+<h1 class="title" id="currentSection">Skills and Qualifications</h1>
+<section class="skills-grid">
+    <div class="skills-item" th:each="skills : ${skillsList}">
+        <a th:href="${skills.link}">
+            <h2 th:text="${skills.name}"></h2>
+            <p th:text="${skills.description}"></p>
+            <p>
+                Estimated Duration: <span class="duration" th:text="${skills.duration}"></span>
+            </p>
+            <p>
+                Expires On: <span class="date" th:text="${skills.expiryDate}"></span>
+            </p>
+        </a>
+    </div>
+</section>
+<section class="skills-grid">
+    <div class="resources-item" th:each="resources : ${resourcesList}">
+        <h2 th:text="${resources.name}"></h2>
+        <p th:text="${resources.description}"></p>
+        <p class="duration" th:text="${resources.access}"></p>
+        <a th:if="${resources.link != null}" th:href="${resources.link}"><p class="resourceLink">Website Link</p></a>
+        <p class="resource" th:if="${resources.address != null}" th:text="${resources.address}"></p>
+        <p class="resource" th:if="${resources.phone != null}" th:text="${resources.phone}"></p>
+    </div>
+</section>
+<div th:replace="~{fragments/footer :: bootstrap-js}"></div>
+<footer th:replace="~{fragments/footer}"></footer>
+<script th:src="@{/JavaScript/skillsSwitch.js}"></script>
+</body>
+</html>

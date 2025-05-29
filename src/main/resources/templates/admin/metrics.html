@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link th:replace="~{fragments/dashboardHeader::bootstrap-css}" />
+    <link rel="stylesheet" th:href="@{/stylesheet/metrics.css}">
+
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside th:replace="~{fragments/dashboardHeader::sidebar}"></aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-content container">
+        <!-- Display any error message -->
+        <div th:if="${errorMessage}" class="alert alert-danger" role="alert">
+            <p th:text="${errorMessage}"></p>
+        </div>
+
+        <div class="dashboard-metrics">
+            <div class="metric-card">
+                <h2>Total Users</h2>
+                <img id="usersImage" src="/images/users.png" />
+                <p th:text="${totalUsers}"></p>
+            </div>
+            <div class="metric-card">
+                <h2>Active Users</h2>
+                <img id="activeUsersImage" src="/images/activeUsers.png"  />
+                <p th:text="${activeUsers}"></p>
+            </div>
+            <div class="metric-card">
+                <h2>Total News</h2>
+                <img id="postsChartImage" src="/images/posts.png" />
+                <p th:text="${totalNews}"></p>
+
+            </div>
+            <div class="metric-card">
+                <h2>Total Events</h2>
+                <img id="eventsChartImage" src="/images/events.png"/>
+                <p th:text="${totalEvents}"></p>
+            </div>
+            <div class="metric-card">
+                <h2>Total Organizations</h2>
+                <img id="oragnisChartImage" src="/images/Organis.png"  />
+                <p th:text="${totalOrganisations}"></p>
+
+            </div>
+            <div class="metric-card">
+                <h2>Total Comments</h2>
+                <img id="commentChartImage" src="/images/comments.png" />
+                <p th:text="${totalComments}"></p>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

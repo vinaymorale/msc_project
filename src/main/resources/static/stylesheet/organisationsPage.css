@@ -1,0 +1,91 @@
+body {
+    font-family: "Times New Roman", sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #d50032;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header .header-container {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    color: #d50032 !important;
+    padding-top: 25px;
+}
+
+header .subheading {
+    font-size: 1.2rem;
+    font-family: "Times New Roman", sans-serif;
+}
+
+.organisations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 0.4fr);
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.organisations-item {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    outline: 2px solid #d50032;
+    outline-offset: 4px;
+}
+
+.organisations-image {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Maintain consistent size */
+    object-fit: cover;
+    border-radius: 8px 0 0 8px; /* Round left corners for aesthetic */
+}
+
+.organisations-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.organisations-item h2 {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 1.8rem;
+    color: #d50032;
+    margin: 0 0 10px;
+}
+
+.organisations-item p {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+#mainText {
+    padding-top: 25px;
+    text-align: justify;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
